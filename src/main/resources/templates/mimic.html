@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodada de Imitação</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Rodada de Imitação</h1>
+    <p th:text="${message}"></p>
+    <form action="/game/next" method="post">
+        <div class="form-group">
+            <label for="winnerName">Nome do Vencedor</label>
+            <input type="text" class="form-control" id="winnerName" name="winnerName" placeholder="Nome do vencedor">
+        </div>
+        <button type="submit" class="btn btn-primary">Próxima Rodada</button>
+    </form>
+    <h2 class="mt-4">Pontuação</h2>
+    <ul class="list-group">
+        <li class="list-group-item" th:each="player : ${players}">
+            <span th:text="${player.name}">Nome</span> - <span th:text="${player.score}">Pontuação</span>
+        </li>
+    </ul>
+    <p>Rodadas restantes: <span th:text="${remainingRounds}">0</span></p>
+</div>
+</body>
+</html>

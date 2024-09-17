@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Jogadores</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Adicionar Jogadores</h1>
+    <form action="/game/addPlayers" method="post">
+        <div class="form-group">
+            <label for="playerName">Nome do Jogador:</label>
+            <input type="text" id="playerName" name="playerName" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Adicionar Jogador</button>
+    </form>
+    <p class="mt-3">Jogadores restantes: <span th:text="${remainingPlayers}"></span></p>
+</div>
+</body>
+</html>

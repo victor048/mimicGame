@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking dos Jogadores</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Ranking dos Jogadores</h1>
+    <div class="alert alert-info" role="alert">
+        <p th:text="${message}">Mensagem do Ranking</p>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Pontuação</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="player : ${players}">
+            <td th:text="${player.name}">Nome do Jogador</td>
+            <td th:text="${player.score}">Pontuação</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
